@@ -1,0 +1,170 @@
+---
+title: "Legends Map"
+author: Logan Williams
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r, echo=FALSE}
+#load dependencies
+library(here)
+library(readr)
+library(dplyr)
+library(leaflet)
+library(RColorBrewer)
+library(mapview)
+
+#load data
+df <- read_csv(here("data", "comps.csv"))
+teams <- read_csv(here("data", "teams.csv"))
+web <- read_csv(here("data", "teamweb.csv"))
+webcomp <- read_csv(here("data", "compweb.csv"))
+
+#left join with theme data
+#clean teams data
+teams %>%
+  rename("type" = "M/F or Coed")%>%
+  rename("university" = "Name of University (If Applicable)")%>%
+  rename("team" = "Team")%>%
+  rename("lat" = "Latitude")%>%
+  rename("lon" = "Longitude")%>%
+  mutate(type1 = ifelse(grepl("F", type), "All Female Team",
+                        ifelse(grepl("M", type), "All Male Team",
+                               ifelse(grepl("Coed", type), "Coed Team", NA))))%>%
+  mutate(active = ifelse(grepl("Y", Active), "Active",
+                         ifelse(grepl("N", Active), "Inactive", NA)))%>%
+  select(team, university, type1, active, lat, lon) -> teams
+
+#jitter lat lon data
+teams$lon <- jitter(teams$lon)
+teams$lon <- jitter(teams$lon)
+
+#clean comp data
+df%>%
+  rename("bid" = "2020")%>%
+  mutate(bid_stat = ifelse(grepl("LB", bid), "Legends Partner & Bollywood America Bid",
+                           ifelse(grepl("LW", bid), "Legends Partner & Bollywood America Wildcard",
+                           ifelse(grepl("L", bid), "Legends Partner",
+                           ifelse(grepl("B", bid), "Bollywood America Bid",
+                           ifelse(grepl("W", bid), "Bollywood America Wildcard", NA))))))%>%
+  rename("lat" = "Latitude_1")%>%
+  rename("lon" = "Longitude_1")%>%
+  rename("name" = "Competition")%>%
+  transform(lat = as.numeric(lat))%>%
+  transform(lon = as.numeric(lon))%>%
+  filter(Location != ("NA"))%>%
+  select(name, lat, lon, Active, Location, bid, bid_stat) -> df
+
+#jitter lat lon data
+df$lat <- jitter(df$lat, factor = 1)
+df$lon <- jitter(df$lon, factor = 1)
+
+
+#clean team website data
+web%>%
+  rename("team" = "Team Name")%>%
+  rename("logo" = "Team Logo")%>%
+  rename("site" = "Team Site Link")%>%
+  select(team, logo, site) -> web
+
+#clean comp website data
+webcomp%>%
+  rename("name" = "Name")%>%
+  rename("logo" = "Photo")%>%
+  rename("site" = "Team (Name)")%>%
+  mutate(site1 = paste("https://www.legends.desidancenetwork.org", site, sep = ""))%>%
+  select(name, logo, site1) -> webcomp
+
+#join web data with team data
+teams <- left_join(teams, web, by = "team")
+df <- left_join(df, webcomp, by = "name")
+
+#comps with website
+df%>%
+  filter(is.na(site1)) -> nocompsite
+
+#comps without website
+df%>%
+  filter(site1 != ("NA")) -> compsite
+
+#teams with no website
+teams%>%
+  filter(site != ("NA")) -> sub
+
+#teams with website
+teams%>%
+  filter(is.na(site)) -> teams
+```
+
+```{r, echo=FALSE}
+
+#ba <- filter(df, bid %in% c("B", "LB", "LW", "W"))
+
+legends <- filter(df, bid %in% c("L", "LB", "LW"))
+
+test <- filter(df, !bid %in% c("L", "LB", "LW"))
+```
+
+
+```{r, include=FALSE}
+leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+    
+  addCircleMarkers(data = legends,
+                   weight = 3, 
+                   radius=10, 
+                   color="#045a8d",
+                   popup = paste("<b>Competition:</b> ", legends$name, "<br>",
+                  "<b>2020 Location:</b> ", legends$Location, "<br>",
+                  "<b>2020 Affiliation:</b> ", 
+                      legends$bid_stat, "<br>",
+                  "<a href='",
+                   compsite$site1,
+                   "' target='_blank'>",
+                   "Competition Page</a>"),
+                   group = "Legends PC")%>%
+  addCircleMarkers(data = test,
+                   weight = 3, 
+                   radius=10, 
+                   color="#2b8cbe",
+                   popup = paste("<b>Competition:</b> ", test$name, "<br>",
+                  "<b>2020 Location:</b> ", test$Location, "<br>",
+                  "<b>2020 Affiliation:</b> ", 
+                      test$bid_stat, "<br>"),
+                   group = "Other Competitions")%>%
+  
+  addCircleMarkers(data = sub,
+                   weight = 3, 
+                   radius=10, 
+                   color="#2b8cbe",
+                   popup = paste("<b>Team:</b> ", sub$team, "<br>",
+                  "<b>University:</b> ", sub$university, "<br>",
+                  "<b>Type:</b> ", sub$type1, "<br>",
+                  "<b>2020 Status:</b> ", 
+                      sub$active, "<br>",
+                   "<a href='",
+                   sub$site,
+                   "' target='_blank'>",
+                   "Team Page</a>"), 
+                   group = "Teams")%>%
+  addCircleMarkers(data = teams,
+                   weight = 3, 
+                   radius=10, 
+                   color="#2b8cbe",
+                   popup = paste("<b>Team:</b> ", teams$team, "<br>",
+                  "<b>University:</b> ", teams$university, "<br>",
+                  "<b>Type:</b> ", teams$type1, "<br>",
+                  "<b>2020 Status:</b> ", 
+                      teams$active, "<br>"), 
+                   group = "Teams")%>%
+  addLayersControl(
+          overlayGroups =c("Legends PC", "Other Competitions", "Teams"),
+          options = layersControlOptions(collapsed=FALSE)
+          ) -> map
+#addPopupImages(sub$logo, group = "Teams", width = 100, height = 100)%>%
+
+library(htmlwidgets)
+saveWidget(map, file="legendsmap.html")
+```
+

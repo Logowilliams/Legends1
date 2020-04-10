@@ -1,0 +1,168 @@
+"0","#load dependencies"
+"0","library(here)"
+"2","here() starts at /Users/loganbogenut/Documents/legends
+"
+"0","library(readr)"
+"0","library(dplyr)"
+"2","Registered S3 method overwritten by 'dplyr':
+  method           from
+  print.rowwise_df     
+"
+"2","
+Attaching package: ‘dplyr’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+"
+"0","library(leaflet)"
+"0","library(RColorBrewer)"
+"0","library(mapview)"
+"0",""
+"0","#load data"
+"0","df <- read_csv(here(""comps.csv""))"
+"2","Missing column names filled in: 'X15' [15], 'X16' [16]"
+"2","Duplicated column names deduplicated: 'Latitude' => 'Latitude_1' [17], 'Longitude' => 'Longitude_1' [18]"
+"2","Parsed with column specification:
+cols(
+  .default = col_character(),
+  `2021` = [33mcol_logical()[39m,
+  `2021 Date` = [33mcol_logical()[39m,
+  Latitude = [32mcol_double()[39m,
+  Longitude = [32mcol_double()[39m,
+  Latitude_1 = [32mcol_double()[39m,
+  Longitude_1 = [32mcol_double()[39m,
+  `Accuracy Score` = [32mcol_double()[39m,
+  Number = [32mcol_double()[39m,
+  `Unit Type` = [33mcol_logical()[39m,
+  `Unit Number` = [33mcol_logical()[39m
+)
+"
+"2","See spec(...) for full column specifications.
+"
+"0","teams <- read_csv(here(""teams.csv""))"
+"2","Parsed with column specification:
+cols(
+  .default = col_character(),
+  Latitude = [32mcol_double()[39m,
+  Longitude = [32mcol_double()[39m,
+  `Accuracy Score` = [32mcol_double()[39m,
+  Number = [33mcol_logical()[39m,
+  Street = [33mcol_logical()[39m,
+  `Unit Type` = [33mcol_logical()[39m,
+  `Unit Number` = [33mcol_logical()[39m
+)
+"
+"2","See spec(...) for full column specifications.
+"
+"0","web <- read_csv(here(""website.csv""))"
+"2","Parsed with column specification:
+cols(
+  `Team Name` = [31mcol_character()[39m,
+  ID = [31mcol_character()[39m,
+  Owner = [31mcol_character()[39m,
+  `Created Date` = [34mcol_datetime(format = """")[39m,
+  `Updated Date` = [34mcol_datetime(format = """")[39m,
+  `Team Logo` = [31mcol_character()[39m,
+  Gallery = [31mcol_character()[39m,
+  `Short Description` = [31mcol_character()[39m,
+  College = [31mcol_character()[39m,
+  `Projects (Team Name)` = [31mcol_character()[39m,
+  Elo = [32mcol_double()[39m,
+  `Next Comp` = [33mcol_logical()[39m,
+  `Team Site Link` = [31mcol_character()[39m
+)
+"
+"0","webcomp <- read_csv(here(""Team.csv""))"
+"2","Parsed with column specification:
+cols(
+  .default = col_character(),
+  `Created Date` = [34mcol_datetime(format = """")[39m,
+  `Updated Date` = [34mcol_datetime(format = """")[39m,
+  Date = [34mcol_datetime(format = """")[39m,
+  Carousel = [32mcol_double()[39m
+)
+"
+"2","See spec(...) for full column specifications.
+"
+"0","#left join with theme data"
+"0","#clean teams data"
+"0","teams %>%"
+"0","  rename(""type"" = ""M/F or Coed"")%>%"
+"0","  rename(""university"" = ""Name of University (If Applicable)"")%>%"
+"0","  rename(""team"" = ""Team"")%>%"
+"0","  rename(""lat"" = ""Latitude"")%>%"
+"0","  rename(""lon"" = ""Longitude"")%>%"
+"0","  mutate(type1 = ifelse(grepl(""F"", type), ""All Female Team"","
+"0","                        ifelse(grepl(""M"", type), ""All Male Team"","
+"0","                               ifelse(grepl(""Coed"", type), ""Coed Team"", NA))))%>%"
+"0","  mutate(active = ifelse(grepl(""Y"", Active), ""Active"","
+"0","                         ifelse(grepl(""N"", Active), ""Inactive"", NA)))%>%"
+"0","  select(team, university, type1, active, lat, lon) -> teams"
+"0",""
+"0","#jitter lat lon data"
+"0","teams$lon <- jitter(teams$lon)"
+"0","teams$lon <- jitter(teams$lon)"
+"0",""
+"0","#clean comp data"
+"0","df%>%"
+"0","  rename(""bid"" = ""2020"")%>%"
+"0","  mutate(bid_stat = ifelse(grepl(""LB"", bid), ""Legends Partner & Bollywood America Bid"","
+"0","                           ifelse(grepl(""LW"", bid), ""Legends Partner & Bollywood America Wildcard"","
+"0","                           ifelse(grepl(""L"", bid), ""Legends Partner"","
+"0","                           ifelse(grepl(""B"", bid), ""Bollywood America Bid"","
+"0","                           ifelse(grepl(""W"", bid), ""Bollywood America Wildcard"", NA))))))%>%"
+"0","  rename(""lat"" = ""Latitude_1"")%>%"
+"0","  rename(""lon"" = ""Longitude_1"")%>%"
+"0","  rename(""name"" = ""Competition"")%>%"
+"0","  transform(lat = as.numeric(lat))%>%"
+"0","  transform(lon = as.numeric(lon))%>%"
+"0","  filter(Location != (""NA""))%>%"
+"0","  select(name, lat, lon, Active, Location, bid, bid_stat) -> df"
+"0",""
+"0","#jitter lat lon data"
+"0","df$lat <- jitter(df$lat, factor = 1)"
+"0","df$lon <- jitter(df$lon, factor = 1)"
+"0",""
+"0",""
+"0","#clean team website data"
+"0","web%>%"
+"0","  rename(""team"" = ""Team Name"")%>%"
+"0","  rename(""logo"" = ""Team Logo"")%>%"
+"0","  rename(""site"" = ""Team Site Link"")%>%"
+"0","  select(team, logo, site) -> web"
+"0",""
+"0","#clean comp website data"
+"0","webcomp%>%"
+"0","  rename(""name"" = ""Name"")%>%"
+"0","  rename(""logo"" = ""Photo"")%>%"
+"0","  rename(""site"" = ""Team (Name)"")%>%"
+"0","  mutate(site1 = paste(""https://www.legends.desidancenetwork.org"", site, sep = """"))%>%"
+"0","  select(name, logo, site1) -> webcomp"
+"0",""
+"0","#join web data with team data"
+"0","teams <- left_join(teams, web, by = ""team"")"
+"0","df <- left_join(df, webcomp, by = ""name"")"
+"0",""
+"0","#comps with website"
+"0","df%>%"
+"0","  filter(is.na(site1)) -> nocompsite"
+"0",""
+"0","#comps without website"
+"0","df%>%"
+"0","  filter(site1 != (""NA"")) -> compsite"
+"0",""
+"0","#teams with no website"
+"0","teams%>%"
+"0","  filter(site != (""NA"")) -> sub"
+"0",""
+"0","#teams with website"
+"0","teams%>%"
+"0","  filter(is.na(site)) -> teams"

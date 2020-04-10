@@ -1,0 +1,62 @@
+Competition,Location,Active,Region,Email,2017,2018,2019,2020,2021,Comment,2021 Date,Latitude,Longitude,,,Latitude,Longitude,Accuracy Score,Accuracy Type,Number,Street,Unit Type,Unit Number,City,State,County,Zip,Country,Source
+A-Town Showdown ,"Atlanta, GA",Y,SE,director@atownshowdown.org ,LB,L,LB,LB,,,,33.771297,-84.393503,L,Legends Partner,33.759412,-84.335664,0.2,street_center,,New St NE,,,Atlanta,GA,DeKalb County,30307,US,TIGER/Line® dataset from the US Census Bureau
+Aa Dekhen Zara (ADZ),"Madison, WI",Y,MW,adzentertainment@gmail.com,,,W,LB,,,,43.073051,-89.40123,B,BA Signature,43.06956,-89.423861,1,place,,,,,Madison,WI,Dane County,53701,US,TIGER/Line® dataset from the US Census Bureau
+Aag Ki Raat,"Columbia, SC",Y,SE,uscakr@gmail.com,,,L,L,,,,34.00071,-81.034813,W,BA Wildcard,33.987454,-81.024864,1,place,,,,,Columbia,SC,Richland County,29201,US,TIGER/Line® dataset from the US Census Bureau
+Aaj Ka Dhamaka,"Chapel Hill, NC",Y,SE,uncakd@gmail.com,,,LW,LB,,,,35.910259,-79.055473,NE,Northeast,36.004647,-79.054475,1,place,,,,,Chapel Hill,NC,Orange County,27514,US,TIGER/Line® dataset from the US Census Bureau
+Aaja Nachle,"Dallas, TX",Y,S,utdaajanachle@gmail.com,LB,,LB,LB,,,,32.776665,-96.796989,MW,Midwest,32.781179,-96.790329,1,place,,,,,Dallas,TX,Dallas County,75201,US,TIGER/Line® dataset from the US Census Bureau
+Buckeye Mela,"Columbus, OH",Y,MW,exec@buckeyemela.com,LB,L,LB,LB,,,,39.961178,-82.998795,SE,Southeast,40.100924,-83.013402,1,place,,,,,Columbus,OH,Franklin County,43085,US,TIGER/Line® dataset from the US Census Bureau
+Infusion ,"State College, PA",Y,NE,pennstateinfusion@gmail.com,LB,L,LB,LB,,,,40.798214,-77.859909,WC,West Coast,40.77893,-77.841359,1,place,,,,,State College,PA,Centre County,16801,US,TIGER/Line® dataset from the US Census Bureau
+Jazba,"Minneapolis, MN",Y,MW,jazba@umn.edu,LB,L,LB,LB,,,,44.9778,93.265,TX,Texas,44.984577,-93.269097,1,place,,,,,Minneapolis,MN,Hennepin County,55401,US,TIGER/Line® dataset from the US Census Bureau
+Jhalak,"Austin, TX",Y,S,jhalak@utexas-ica.com,LB,L,LB,LB,,,,30.2672,97.7431,,,30.326374,-97.771258,1,place,,,,,Austin,TX,Travis County,73301,US,TIGER/Line® dataset from the US Census Bureau
+Jhoomti Shaam,"Los Angeles, CA",Y,WC,jhoomtishaam@gmail.com,LB,L,LB,LB,,,,34.0522,118.2437,,,33.973951,-118.248405,1,place,,,,,Los Angeles,CA,Los Angeles County,90001,US,TIGER/Line® dataset from the US Census Bureau
+Maryland Minza,"College Park, MD",Y,NE,marylandminza@gmail.com,,,LB,LB,,,,38.9897,76.9378,,,39.002867,-76.931652,1,place,,,,,College Park,MD,Prince George's County,20740,US,TIGER/Line® dataset from the US Census Bureau
+Midwest Dhamaka,"Cincinnati, OH",Y,MW,registration@midwestdhamaka.com,LB,L,LB,LB,,,,39.1031,84.512,,,39.166759,-84.53822,1,place,,,,,Cincinnati,OH,Hamilton County,45201,US,TIGER/Line® dataset from the US Census Bureau
+Nachte Raho,"Iowa City, IA",Y,MW,nachteraho@gmail.com,L,L,LW,LW,,,,41.6611,91.5302,,,41.634209,-91.49905,1,place,,,,,Iowa City,IA,Johnson County,52240,US,TIGER/Line® dataset from the US Census Bureau
+Oak City Revolution,"Raleigh, NC",Y,SE,oakcityrevolution@ektaa.org,,,LB,LB,,,,35.7796,78.6382,,,35.773632,-78.634457,1,place,,,,,Raleigh,NC,Wake County,27601,US,TIGER/Line® dataset from the US Census Bureau
+South Asian Showdown,"Boston, MA",Y,NE,Info@southasianshowdown.com,LB,,,L,,,,42.3601,71.0589,,,42.370567,-71.026964,1,place,,,,,Boston,MA,Suffolk County,2101,US,TIGER/Line® dataset from the US Census Bureau
+Tamasha SD,"San Diego, CA",Y,WC,tamashasd@gmail.com,LB,L,LB,LB,,,,32.7157,117.1611,,,32.724103,-117.170912,1,place,,,,,San Diego,CA,San Diego County,92101,US,TIGER/Line® dataset from the US Census Bureau
+Tufaan,"Evanston, IL",Y,MW,tufaanexec@gmail.com,LB,L,LB,LB,,,,42.0451,87.6877,,,42.049148,-87.702155,1,place,,,,,Evanston,IL,Cook County,60201,US,TIGER/Line® dataset from the US Census Bureau
+UGA India Night,"Athens, GA",Y,SE,ugaindianight@gmail.com,,,LB,LB,,,,33.9519,83.3576,,,33.992902,-83.353697,1,place,,,,,Athens,GA,Clarke County,30601,US,TIGER/Line® dataset from the US Census Bureau
+ATL Tamasha,"Atlanta, GA",Y,SE,uisageorgia@gmail.com,,,,,,,,33.749,84.388,,,33.844371,-84.47405,1,place,,,,,Atlanta,GA,Fulton County,30301,US,TIGER/Line® dataset from the US Census Bureau
+Bollywood Berkeley,"Berkeley, CA",Y,WC,bollywoodberkeley@gmail.com,LB,L,,W,,,,37.8715,122.273,,,37.860576,-122.29673,1,place,,,,,Berkeley,CA,Alameda County,94701,US,TIGER/Line® dataset from the US Census Bureau
+Dance Ke Deewane,"Miami, FL",Y,SE,"dancekedeewane@gmail.com,",B,,,,,,,25.7617,80.1918,,,25.558428,-80.458168,1,place,,,,,Miami,FL,Miami-Dade County,33231,US,TIGER/Line® dataset from the US Census Bureau
+Dhamaal,"Detroit, MI",Y,MW,dhamaalcomp@gmail.com,LB,,W,W,,,,42.3314,83.0458,,,42.347021,-83.060184,1,place,,,,,Detroit,MI,Wayne County,48201,US,TIGER/Line® dataset from the US Census Bureau
+Naach Di Cleveland,"Cleveland, OH",Y,MW,naachdicle@gmail.com,L,,W,W,,,,41.4993,81.6944,,,41.489381,-81.667486,1,place,,,,,Cleveland,OH,Cuyahoga County,44101,US,TIGER/Line® dataset from the US Census Bureau
+Nasha Houstan,"Houstan, TX",Y,S,uhnasha@gmail.com,,,,W,,,,29.7604,95.3698,,,29.813142,-95.309789,1,place,,,,,Houston,TX,Harris County,77001,US,TIGER/Line® dataset from the US Census Bureau
+Nasha Purdue,"West Lafayette, IN",Y,MW,nasha.purdue@gmail.com ,B,,W,,,,,40.4259,86.9081,,,40.467303,-86.928132,1,place,,,,,West Lafayette,IN,Tippecanoe County,47906,US,TIGER/Line® dataset from the US Census Bureau
+Sitara,"San Antonio, TX",Y,S,sasitara.dance@gmail.com,L,L,B,,,,,,,,,29.468413,-98.528889,1,place,,,,,San Antonio,TX,Bexar County,78201,US,TIGER/Line® dataset from the US Census Bureau
+Taaza,"Pittsburgh, Pennsylvania",Y,NE,Taaza412@gmail.com,,,,W,,,,,,,,40.439297,-79.963413,1,rooftop,3333,5th Ave,,,Pittsburgh,PA,Allegheny County,15213,US,Allegheny
+UIUC Udaan,"Champaign, IL",Y,MW,uiucudaan@gmail.com,,,,W,,,,,,,,40.10789,-88.244266,1,place,,,,,Champaign,IL,Champaign County,61820,US,TIGER/Line® dataset from the US Census Bureau
+Blacksburg Ki Baadmashi,"Blacksburg, VA",Y,SE,blacksburgkb@gmail.com,,,,,,,,,,,,37.256283,-80.43473,1,place,,,,,Blacksburg,VA,Montgomery County,24060,US,TIGER/Line® dataset from the US Census Bureau
+CLT Pulse,"Charlotte, NC",Y,SE,pulseatcharlotte@gmail.com,,,,,,,,,,,,35.26002,-80.804151,1,place,,,,,Charlotte,NC,Mecklenburg County,28201,US,TIGER/Line® dataset from the US Census Bureau
+Derby City Dhoom,"Louisville, KY",Y,MW,derbycitydhoom@gmail.com,,,,,,,,,,,,38.188962,-85.676819,1,place,,,,,Louisville,KY,Jefferson County,40201,US,TIGER/Line® dataset from the US Census Bureau
+Dhamaka Tamasha,"Marlton, NJ",Y,NE,dhamakatamasha@gmail.com,,,,,,,,,,,,39.90153,-74.92957,1,place,,,,,Marlton,NJ,Burlington County,8053,US,TIGER/Line® dataset from the US Census Bureau
+Dil Se,"Baltimore, MD",Y,NE,dilsebaltimore@gmail.com,,,,,,,,,,,,39.296536,-76.623489,1,place,,,,,Baltimore,MD,Baltimore city,21201,US,TIGER/Line® dataset from the US Census Bureau
+Dil Se Naach,"Greenville, NC",Y,SE,dilsenaach.ecu@gmail.com,,,,,,,,,,,,35.580444,-77.392609,1,place,,,,,Greenville,NC,Pitt County,27833,US,TIGER/Line® dataset from the US Census Bureau
+Harvard Raunak,"Cambridge, MA",Y,NE,harvardraftaar@gmail.com,,,,,,Showcase,,,,,,42.380442,-71.132947,1,place,,,,,Cambridge,MA,Middlesex County,2138,US,TIGER/Line® dataset from the US Census Bureau
+Jersey Jalwa,"Ewingville, NJ",Y,NE,jerseyjalwa@gmail.com,,,,,,,,,,,,40.284308,-74.717976,0.8,place,,,,,Ewingville,NJ,Mercer County,8648,US,TIGER/Line® dataset from the US Census Bureau
+Knoxville ki Jawaani (formerly Rang See Nachle),"Knoxville, TN",Y,SE,iaa.utk.president@gmail.com,,,,,,,,,,,,36.032334,-83.884804,1,place,,,,,Knoxville,TN,Knox County,37901,US,TIGER/Line® dataset from the US Census Bureau
+Lalkar,"Newark, DE",Y,NE,lalkar.bhangra@gmail.com,,,,,,,,,,,,39.677682,-75.753914,1,rooftop,210,S College Ave,,,Newark,DE,New Castle County,19716,US,New Castle
+Las Vegas All Stars,"Las Vegas, NV",Y,WC,"allstarslasvegas@gmail.com,",,,,,,,,,,,,36.17372,-115.10647,1,place,,,,,Las Vegas,NV,Clark County,89101,US,TIGER/Line® dataset from the US Census Bureau
+Muqabla,"East Orange, NJ",Y,NE,,,,,,,,,,,,,40.77185,-74.207039,1,place,,,,,East Orange,NJ,Essex County,7017,US,TIGER/Line® dataset from the US Census Bureau
+Nach Ke Dikha,"Williamsburg, VA",Y,NE,nachkedikhacompetition@gmail.com,,,,,,,,,,,,37.310451,-76.746769,1,place,,,,,Williamsburg,VA,Williamsburg city,23186,US,TIGER/Line® dataset from the US Census Bureau
+Nachle Deewane,"Santa Barbara, CA",Y,WC,info@ucsbdhadkan.com,,,,,,,,,,,,34.421897,-119.707135,1,place,,,,,Santa Barbara,CA,Santa Barbara County,93101,US,TIGER/Line® dataset from the US Census Bureau
+Sangam,"College Station, TX",Y,S,tamuisaprex@gmail.com,,,,,,,,,,,,30.609093,-96.325984,1,place,,,,,College Station,TX,Brazos County,77840,US,TIGER/Line® dataset from the US Census Bureau
+Sholay,"Brookhaven, NY",Y,NE,stonybrooksasa@gmail.com,,,,,,,,,,,,40.7793,-72.91213,1,place,,,,,Brookhaven,NY,Suffolk County,11719,US,TIGER/Line® dataset from the US Census Bureau
+Sinatra Showdown,"Queens, NY",Y,NE,sinatrashowdown@gmail.com,,,,,,,,,,,,40.605382,-73.755133,0.47,place,,,,,Far Rockaway,NY,Queens County,11699,US,TIGER/Line® dataset from the US Census Bureau
+Steel City Sapna,"Pittsburgh, PA",Y,NE,steelcitysapna@gmail.com,,,,,,,,,,,,40.44431,-79.953197,0.9,rooftop,4200,5th Ave,,,Pittsburgh,PA,Allegheny County,15213,US,Allegheny
+Tu Bhi Nachle,"Fairfax, VA",Y,NE,tbngmu@gmail.com,,,,,,,,,,,,38.853231,-77.305097,1,place,,,,,Fairfax,VA,Fairfax city,22030,US,TIGER/Line® dataset from the US Census Bureau
+UAB Taste of India,"Birmingham, AL",Y,SE,aao.toa@gmail.com,,,,,,,,,,,,33.456412,-86.801904,1,place,,,,,Birmingham,AL,Jefferson County,35201,US,TIGER/Line® dataset from the US Census Bureau
+A2 Dhoom,"Ann Arbor, MI",N,MW,michiganmazaa@gmail.com,LB,L,LB,,,Ended 2019,,,,,,42.266638,-83.849042,1,place,,,,,Ann Arbor,MI,Washtenaw County,48103,US,TIGER/Line® dataset from the US Census Bureau
+Legacy on Broad,"Philadelphia, PA",N,NE,legacyonbroad@gmail.com,LB,L,LB,,,Ended 2019,,,,,,39.953041,-75.192664,1,range_interpolation,3451,Walnut St,,,Philadelphia,PA,Philadelphia County,19104,US,TIGER/Line® dataset from the US Census Bureau
+Bollywood Dance Canada,"Toronto, ON, Canada",N,MW,info@bollywooddancecanada.com,,,,,,Ended 2016,,,,,,43.653963,-79.387207,0.8,place,,,,,Toronto,ON,,M5G,CA,CanVec+ by Natural Resources Canada
+Bollywood Smash,,N,Virtual,,,,,,,Ended 2013,,,,,,0,0,0,,,,,,,,,,,
+Dance Fusion,,N,Traveling,,,,,,,Ended 2011,,,,,,0,0,0,,,,,,,,,,,
+Elite 8 Naach,"Washington, DC",N,NE,,,,,,,Ended 2012,,,,,,38.911936,-77.016719,1,place,,,,,Washington,DC,District of Columbia,20001,US,TIGER/Line® dataset from the US Census Bureau
+Josh-e-Naach ,"New York, NY",N,NE,josh.e.naach@gmail.com,,,,,,Ended 2019,,,,,,40.68863,-74.018244,1,place,,,,,New York,NY,New York County,10004,US,TIGER/Line® dataset from the US Census Bureau
+Muqabla NNR,"Newark, DE",N,SE,,,,,,,Ended 2013,,,,,,39.614737,-75.701277,1,place,,,,,Newark,DE,New Castle County,19702,US,TIGER/Line® dataset from the US Census Bureau
+Phillyfest,"Philadelphia, PA",N,NE,,,,,,,Ended 2012,,,,,,39.947647,-75.165213,1,rooftop,250,S Broad St,,,Philadelphia,PA,Philadelphia County,19102,US,Philadelphia
+Raaz,"Pittsburgh, PA",N,NE,RaazCompetition@gmail.com,,,,,,Ended 2018,,,,,,40.444213,-79.943399,1,rooftop,5000,Forbes Ave,,,Pittsburgh,PA,Allegheny County,15213,US,Allegheny
+Temple Tashan,"Philadelphia, PA",N,NE,tutashan@gmail.com,,,,,,Ended 2017,,,,,,39.980072,-75.15758,1,range_interpolation,1801,N Broad St,,,Philadelphia,PA,Philadelphia County,19122,US,TIGER/Line® dataset from the US Census Bureau
+The Manhattan Project,"New York, NY",N,NE,,,,,,,Ended 2015,,,,,,40.728824,-73.996139,1,rooftop,44,W 4th St,,,New York,NY,New York County,10012,US,City of New York
+Naach Nation,"New York, NY",Y,NE,,,,,,,Showcase,,,,,,40.812242,-73.9532,1,place,,,,,New York,NY,New York County,10027,US,TIGER/Line® dataset from the US Census Bureau

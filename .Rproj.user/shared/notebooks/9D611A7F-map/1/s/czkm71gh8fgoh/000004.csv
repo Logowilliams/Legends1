@@ -1,0 +1,6 @@
+"0",""
+"0","#ba <- filter(df, bid %in% c(""B"", ""LB"", ""LW"", ""W""))"
+"0",""
+"0","legends <- filter(df, bid %in% c(""L"", ""LB"", ""LW""))"
+"0",""
+"0","test <- filter(df, !bid %in% c(""L"", ""LB"", ""LW""))"
