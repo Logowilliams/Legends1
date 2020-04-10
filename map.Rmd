@@ -6,7 +6,7 @@ output:
     df_print: paged
 ---
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 #load dependencies
 library(here)
 library(readr)
@@ -97,7 +97,7 @@ teams%>%
   filter(is.na(site)) -> teams
 ```
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 
 #ba <- filter(df, bid %in% c("B", "LB", "LW", "W"))
 
@@ -166,5 +166,9 @@ leaflet() %>%
 
 library(htmlwidgets)
 saveWidget(map, file="legendsmap.html")
+```
+
+```{r}
+map
 ```
 

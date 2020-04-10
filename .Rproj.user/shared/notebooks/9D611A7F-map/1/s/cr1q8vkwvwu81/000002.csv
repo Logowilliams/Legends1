@@ -27,7 +27,7 @@ Attaching package: ‘dplyr’
 "0","library(mapview)"
 "0",""
 "0","#load data"
-"0","df <- read_csv(here(""comps.csv""))"
+"0","df <- read_csv(here(""data"", ""comps.csv""))"
 "2","Missing column names filled in: 'X15' [15], 'X16' [16]"
 "2","Duplicated column names deduplicated: 'Latitude' => 'Latitude_1' [17], 'Longitude' => 'Longitude_1' [18]"
 "2","Parsed with column specification:
@@ -47,7 +47,7 @@ cols(
 "
 "2","See spec(...) for full column specifications.
 "
-"0","teams <- read_csv(here(""teams.csv""))"
+"0","teams <- read_csv(here(""data"", ""teams.csv""))"
 "2","Parsed with column specification:
 cols(
   .default = col_character(),
@@ -62,7 +62,7 @@ cols(
 "
 "2","See spec(...) for full column specifications.
 "
-"0","web <- read_csv(here(""website.csv""))"
+"0","web <- read_csv(here(""data"", ""teamweb.csv""))"
 "2","Parsed with column specification:
 cols(
   `Team Name` = [31mcol_character()[39m,
@@ -80,7 +80,7 @@ cols(
   `Team Site Link` = [31mcol_character()[39m
 )
 "
-"0","webcomp <- read_csv(here(""Team.csv""))"
+"0","webcomp <- read_csv(here(""data"", ""compweb.csv""))"
 "2","Parsed with column specification:
 cols(
   .default = col_character(),
