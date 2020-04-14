@@ -107,14 +107,85 @@ test <- filter(df, !bid %in% c("L", "LB", "LW"))
 ```
 
 
-```{r, include=FALSE}
+```{r}
+#test maps
+
+#create team icon
+teamicon <- makeIcon(
+  iconUrl = here("data", "teamicon.png"),
+  iconWidth = 20, iconHeight = 20)
+
+#create comp icon
+compicon <- makeIcon(
+  iconUrl = here("data", "compicon.png"),
+  iconWidth = 25, iconHeight = 25)
+
+#make map
 leaflet() %>%
   addProviderTiles(providers$CartoDB.Positron) %>% 
-    
-  addCircleMarkers(data = legends,
-                   weight = 3, 
+  addMarkers(data = teams,
+                   popup = paste("<b>Team:</b> ", teams$team, "<br>",
+                  "<b>University:</b> ", teams$university, "<br>",
+                  "<b>Type:</b> ", teams$type1, "<br>",
+                  "<b>2020 Status:</b> ", 
+                      teams$active, "<br>"), 
+                   group = "Teams",
+             icon = teamicon,
+  clusterOptions = markerClusterOptions())%>%
+  addMarkers(data = legends,
+             ~lon, ~lat,
+                   popup = paste("<b>Competition:</b> ", legends$name, "<br>",
+                  "<b>2020 Location:</b> ", legends$Location, "<br>",
+                  "<b>2020 Affiliation:</b> ", 
+                      legends$bid_stat, "<br>",
+                  "<a href='",
+                   compsite$site1,
+                   "' target='_blank'>",
+                   "Competition Page</a>"),
+                  icon = compicon,
+                   group = "Legends PC", 
+             clusterOptions = markerClusterOptions())%>%
+  addMarkers(data = test,
+                   popup = paste("<b>Competition:</b> ", test$name, "<br>",
+                  "<b>2020 Location:</b> ", test$Location, "<br>",
+                  "<b>2020 Affiliation:</b> ", 
+                      test$bid_stat, "<br>"),
+                   group = "Other Competitions",
+             icon = compicon,
+  clusterOptions = markerClusterOptions())%>%
+  addMarkers(data = sub,
+                   popup = paste("<b>Team:</b> ", sub$team, "<br>",
+                  "<b>University:</b> ", sub$university, "<br>",
+                  "<b>Type:</b> ", sub$type1, "<br>",
+                  "<b>2020 Status:</b> ", 
+                      sub$active, "<br>",
+                   "<a href='",
+                   sub$site,
+                   "' target='_blank'>",
+                   "Team Page</a>"), 
+                   group = "Teams",
+             icon = teamicon,
+  clusterOptions = markerClusterOptions())%>%
+  addLayersControl(
+          overlayGroups =c("Legends PC", "Other Competitions", "Teams"),
+          options = layersControlOptions(collapsed=FALSE)
+          ) -> map
+
+
+library(htmlwidgets)
+saveWidget(map, file="legendsmap.html")
+```
+
+
+
+```{r, eval=FALSE}
+#original map
+leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>% 
+addCircleMarkers(data = legends,
+           weight = 3, 
                    radius=10, 
-                   color="#045a8d",
+                   color="#2b8cbe",
                    popup = paste("<b>Competition:</b> ", legends$name, "<br>",
                   "<b>2020 Location:</b> ", legends$Location, "<br>",
                   "<b>2020 Affiliation:</b> ", 
@@ -161,14 +232,6 @@ leaflet() %>%
   addLayersControl(
           overlayGroups =c("Legends PC", "Other Competitions", "Teams"),
           options = layersControlOptions(collapsed=FALSE)
-          ) -> map
-#addPopupImages(sub$logo, group = "Teams", width = 100, height = 100)%>%
-
-library(htmlwidgets)
-saveWidget(map, file="legendsmap.html")
-```
-
-```{r}
-map
+          )
 ```
 
